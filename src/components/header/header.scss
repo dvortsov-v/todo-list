@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: center;
+
+  &__title {
+    font-size: 20px;
+    font-family: 'Baloo';
+    color: hsl(241, 49%, 18%);
+    line-height: 1.2;
+  }
+}

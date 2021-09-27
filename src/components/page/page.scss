@@ -1,3 +1,10 @@
 .page {
-  height: 100%;
+  min-height: 100%;
+  background:  #fff url('../../assets/bg.jpg') 50% 50% repeat-y;
+  background-size: cover;
+  padding: 20px;
+
+  &__header {
+    margin-bottom: 35px;
+  }
 }

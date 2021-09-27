@@ -1,7 +1,7 @@
 <template>
-  <div id="app" class="app">
-      <Page/>
-  </div>
+    <div id="app" class="app">
+        <Page/>
+    </div>
 </template>
 
 <script>
@@ -18,4 +18,5 @@ export default {
 <style lang="scss">
   @import './components/scss/reset';
   @import './components/scss/app';
+  @import './components/scss/fonts';
 </style>

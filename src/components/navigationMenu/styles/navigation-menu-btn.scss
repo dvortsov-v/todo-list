@@ -1,0 +1,42 @@
+.navigation-menu-btn {
+  $self: &;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 4px 7px 0 hsla(241, 49%, 18%, 0.2);
+  width: 56px;
+  height: 56px;
+
+  &__icon {
+    width: 26px;
+    height: 26px;
+    fill: hsl(0, 0%, 100%);
+  }
+
+  &--size-s {
+    width: 46px;
+    height: 46px;
+
+    #{$self}__icon {
+      width: 11px;
+      height: 11px;
+    }
+  }
+
+  &--ok,
+  &--okadding {
+    background-image: linear-gradient( -134.446deg, hsl(327, 99%, 56%) 0%, hsl(227, 74%, 51%) 100%);
+  }
+
+  &--adding {
+    background-image: linear-gradient( -124.315deg, hsl(180, 100%, 50%) 0%, hsl(227, 74%, 51%) 100%);
+  }
+
+  &--close {
+    background-image: linear-gradient( -134.446deg, hsl(241, 49%, 18%) 0%, hsl(240, 11%, 58%) 100%);
+  }
+}
+

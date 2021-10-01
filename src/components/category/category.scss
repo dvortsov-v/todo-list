@@ -1,0 +1,56 @@
+.category {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+
+  &--type-dumbell,
+  &--type-sport {
+    background-image: linear-gradient(50.054deg, hsl(327, 99.115044248%, 55.68627451%) 0%, hsl(227, 74%, 51%) 100%);
+
+    &::before {
+      background-color: hsl(327, 99%, 56%);
+    }
+  }
+
+  &--type-location {
+    background-image: linear-gradient(47.061deg, hsl(227, 74%, 51%) 0%, hsl(241, 49%, 18%) 100%);
+
+    &::before {
+      background-color: hsl(227, 74%, 51%);
+    }
+  }
+
+  &--type-other {
+    background-image: linear-gradient(50.054deg, hsl(241, 49%, 18%) 0%, hsl(240, 11%, 58%) 100%);
+
+    &::before {
+      background-color: hsl(241, 49%, 18%);
+    }
+  }
+
+  &--type-wineglass {
+    background-image: linear-gradient(46.842deg, hsl(227, 74%, 51%) 0%, hsl(180, 100%, 50%) 100%);
+
+    &::before {
+      background-color: hsl(180, 100%, 50%);
+    }
+  }
+
+  &--type-shopping {
+    background-image: linear-gradient(-132.38deg, hsl(327, 99%, 56%) 0%, hsl(30, 99%, 65%) 100%);
+
+    &::before {
+      background-color: hsl(30, 99%, 65%);
+    }
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    color: hsl(0, 0%, 100%);
+  }
+}

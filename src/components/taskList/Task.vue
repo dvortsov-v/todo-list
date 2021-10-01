@@ -1,25 +1,51 @@
 <template>
-    <div class="task">
-        <div class="task__type">
-            <iconSport class="task__icon"/>
-        </div>
+    <div :class="taskClasses" class="task">
+        <Category :categoryId="task.categoryId" class="task__type" />
         <p class="task__description">
-            <span class="task__text"> Lorem LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLore LoremLoremLoremLoremLorem Loremm</span>
+            <span class="task__text">{{ task.name }}</span>
         </p>
-        <div class="task__date task-date">
-            <div class="task-date__day">18 Jun</div>
-            <div class="task-date__time">19:20</div>
+        <label v-if="false" class="task__done task-done">
+            <input :id="task.id" type="checkbox" class="task-done__checkbox"/>
+            <div class="task-done__psevdo">
+                <Selected class="task-done__checked" />
+            </div>
+        </label>
+        <div v-else class="task__date task-date">
+            <div class="task-date__day">{{ task.date }}</div>
+            <div class="task-date__time">{{ task.time }}</div>
         </div>
     </div>
 </template>
 
 <script>
-import iconSport from '../../assets/icons/category/sport.svg'
+import Category from '../category/Category'
+import Selected from '../../assets/icons/selected.svg'
+import { getCategory } from '../features/getCatygory'
+import { computed, unref } from '@vue/composition-api'
 
 export default {
   name: 'Task',
   components: {
-    iconSport
+    Category,
+    Selected
+  },
+  props: {
+    task: {
+      type: Object,
+      default: undefined
+    }
+  },
+  setup (props) {
+    const { category } = getCategory(props.task)
+
+    const taskClasses = computed(() => ({
+      [`task--type-${unref(category).name}`]: unref(category).name
+    }))
+
+    return {
+      category,
+      taskClasses
+    }
   }
 }
 </script>

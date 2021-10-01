@@ -4,19 +4,21 @@
         <main class="page__main">
             <TaskList class="page__tasks"/>
         </main>
-        <nav class="page__navigation"></nav>
+        <NavigationMenu class="page__navigation"/>
     </div>
 </template>
 
 <script>
 import HeaderComponent from '../header/HeaderComponent'
 import TaskList from '../taskList/TaskList'
+import NavigationMenu from '../navigationMenu/NavigationMenu'
 
 export default {
   name: 'Page',
   components: {
     HeaderComponent,
-    TaskList
+    TaskList,
+    NavigationMenu
   }
 }
 </script>

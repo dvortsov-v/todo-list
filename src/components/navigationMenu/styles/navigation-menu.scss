@@ -1,0 +1,26 @@
+.navigation-menu {
+  padding-bottom: 20px;
+  min-height: 210px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-image: linear-gradient(to top, hsl(0, 0%, 100%) 0%, hsla(202, 96%, 89%, 0) 100%);
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+  }
+}

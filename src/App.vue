@@ -19,4 +19,5 @@ export default {
   @import './components/scss/reset';
   @import './components/scss/app';
   @import './components/scss/fonts';
+  @import './components/scss/mixins';
 </style>

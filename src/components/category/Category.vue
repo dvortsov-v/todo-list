@@ -11,14 +11,13 @@
 </template>
 
 <script>
-import Dumbell from '../../assets/icons/category/dumbell.svg'
-import Location from '../../assets/icons/category/location.svg'
-import Other from '../../assets/icons/category/other.svg'
-import Shopping from '../../assets/icons/category/shopping.svg'
-import Sport from '../../assets/icons/category/sport.svg'
-import Wineglass from '../../assets/icons/category/wineglass.svg'
+import Dumbell from '../../assets/icons/category/dumbell.svg?inline'
+import Location from '../../assets/icons/category/location.svg?inline'
+import Other from '../../assets/icons/category/other.svg?inline'
+import Shopping from '../../assets/icons/category/shopping.svg?inline'
+import Sport from '../../assets/icons/category/sport.svg?inline'
+import Wineglass from '../../assets/icons/category/wineglass.svg?inline'
 import { computed, unref } from '@vue/composition-api'
-import { categoryList } from '../../api/data'
 import { getCategory } from '../features/getCatygory'
 
 export default {

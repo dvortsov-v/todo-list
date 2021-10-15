@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import Calendary from '../../assets/icons/action-bar/calendary.svg'
-import Adding from '../../assets/icons/action-bar/adding.svg'
-import OkAdding from '../../assets/icons/action-bar/ok-adding.svg'
-import Ok from '../../assets/icons/action-bar/ok.svg'
-import Close from '../../assets/icons/action-bar/close.svg'
-import Gamburger from '../../assets/icons/action-bar/gamburger.svg'
+import Calendary from '../../assets/icons/action-bar/calendary.svg?inline'
+import Adding from '../../assets/icons/action-bar/adding.svg?inline'
+import OkAdding from '../../assets/icons/action-bar/ok-adding.svg?inline'
+import Ok from '../../assets/icons/action-bar/ok.svg?inline'
+import Close from '../../assets/icons/action-bar/close.svg?inline'
+import Gamburger from '../../assets/icons/action-bar/gamburger.svg?inline'
 import { computed } from '@vue/composition-api'
 
 export default {

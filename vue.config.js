@@ -2,23 +2,26 @@ module.exports = {
   css: {
     requireModuleExtension: false
   },
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     const svgRule = config.module.rule('svg')
+
     svgRule.uses.clear()
-    config.module
-      .rule('svg')
-      .oneOf('inline-svg')
-      .use('babel')
+
+    svgRule
+      .oneOf('inline')
+      .resourceQuery(/inline/)
+      .use('babel-loader')
       .loader('babel-loader')
       .end()
       .use('vue-svg-loader')
       .loader('vue-svg-loader')
       .end()
       .end()
-      .oneOf('file')
+      .oneOf('external')
       .use('file-loader')
       .loader('file-loader')
-      .end()
-      .end()
+      .options({
+        name: 'assets/[name].[hash:8].[ext]'
+      })
   }
 }

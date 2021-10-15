@@ -4,7 +4,7 @@
         <p class="task__description">
             <span class="task__text">{{ task.name }}</span>
         </p>
-        <label v-if="false" class="task__done task-done">
+        <label v-if="selectedMode" class="task__done task-done">
             <input :id="task.id" type="checkbox" class="task-done__checkbox"/>
             <div class="task-done__psevdo">
                 <Selected class="task-done__checked" />
@@ -22,6 +22,7 @@ import Category from '../category/Category'
 import Selected from '../../assets/icons/selected.svg'
 import { getCategory } from '../features/getCatygory'
 import { computed, unref } from '@vue/composition-api'
+import store from '../../store'
 
 export default {
   name: 'Task',
@@ -36,6 +37,9 @@ export default {
     }
   },
   setup (props) {
+    const selectedMode = computed(() => store.getters.getSelectedMode)
+
+    // const { standarteMode } = toggleMode()
     const { category } = getCategory(props.task)
 
     const taskClasses = computed(() => ({
@@ -43,6 +47,7 @@ export default {
     }))
 
     return {
+      selectedMode,
       category,
       taskClasses
     }

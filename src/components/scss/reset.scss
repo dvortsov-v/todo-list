@@ -314,3 +314,11 @@ svg {
   box-shadow: 0 0 100px #fff inset;
   -webkit-text-fill-color: currentColor;
 }
+
+.mx-time-column {
+  .mx-time-list {
+    &::after {
+      content: none;
+    }
+  }
+}

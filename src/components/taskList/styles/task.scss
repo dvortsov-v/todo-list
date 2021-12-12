@@ -52,6 +52,10 @@
     }
   }
 
+  &--is-complete {
+    opacity: 0.6;
+  }
+
   &__type {
     flex: none;
   }

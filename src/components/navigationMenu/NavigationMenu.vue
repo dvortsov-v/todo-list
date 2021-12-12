@@ -6,7 +6,7 @@
             <template v-if="!selectedMode">
                 <li class="navigation-menu__item">
                     <navigationMenuBtn
-                        @click.native="toggleSelectedTask"
+                        @click="toggleSelectedTask"
                         small
                         icon="Ok"
                         class="navigation-menu__btn"
@@ -14,13 +14,14 @@
                 </li>
                 <li  class="navigation-menu__item">
                     <navigationMenuBtn
-                        @click.native="toggleCalendaryMode"
+                        @click="toggleCalendaryMode"
                         :icon="calendaryMode ?'Gamburger':  'Calendary'"
                         class="navigation-menu__btn"
                     />
                 </li>
                 <li class="navigation-menu__item">
                     <navigationMenuBtn
+                        @click="toogleNewTaskMode"
                         small
                         icon="Adding"
                         class="navigation-menu__btn"/>
@@ -30,13 +31,15 @@
             <template v-else>
                 <li class="navigation-menu__item">
                     <navigationMenuBtn
-                        @click.native="toggleSelectedTask"
+                        @click="toggleSelectedTask"
                         icon="Close"
                         class="navigation-menu__btn"
                     />
                 </li>
                 <li class="navigation-menu__item">
-                    <navigationMenuBtn icon="OkAdding" class="navigation-menu__btn"/>
+                    <navigationMenuBtn
+                        @click="toogleCompleteAllTask"
+                        icon="OkAdding" class="navigation-menu__btn"/>
                 </li>
             </template>
         </ul>
@@ -46,6 +49,7 @@
 <script>
 import navigationMenuBtn from '../navigationMenu/NavigationMenuBtn'
 import { toggleMode } from '../features/main'
+import { useTaskList } from '../features/useTaskList'
 import { computed, unref } from '@vue/composition-api'
 
 export default {
@@ -58,8 +62,10 @@ export default {
       selectedMode,
       toggleSelectedTask,
       calendaryMode,
-      toggleCalendaryMode
+      toggleCalendaryMode,
+      toogleNewTaskMode
     } = toggleMode()
+    const { toogleCompleteAllTask } = useTaskList()
 
     const navMenuListClasses = computed(() => ({
       'navigation-menu__list--state-of-choice': unref(selectedMode)
@@ -70,7 +76,9 @@ export default {
       toggleSelectedTask,
       calendaryMode,
       toggleCalendaryMode,
-      navMenuListClasses
+      navMenuListClasses,
+      toogleNewTaskMode,
+      toogleCompleteAllTask
     }
   }
 }

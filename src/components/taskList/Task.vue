@@ -7,20 +7,20 @@
         <label v-if="selectedMode" class="task__done task-done">
             <input :id="task.id" type="checkbox" class="task-done__checkbox"/>
             <div class="task-done__psevdo">
-                <Selected class="task-done__checked" />
+                <Selected v-if="task.isComplete" class="task-done__checked" />
             </div>
         </label>
         <div v-else class="task__date task-date">
-            <div class="task-date__day">{{ task.date }}</div>
-            <div class="task-date__time">{{ task.time }}</div>
+            <div class="task-date__day">{{ taskDate }}</div>
+            <div class="task-date__time">{{ taskTime }}</div>
         </div>
     </div>
 </template>
 
 <script>
 import Category from '../category/Category'
-import Selected from '../../assets/icons/selected.svg'
-import { getCategory } from '../features/getCatygory'
+import Selected from '../../assets/icons/selected.svg?inline'
+import { getCategory } from '../features/useGetCatygory'
 import { computed, unref } from '@vue/composition-api'
 import store from '../../store'
 
@@ -39,17 +39,22 @@ export default {
   setup (props) {
     const selectedMode = computed(() => store.getters.getSelectedMode)
 
-    // const { standarteMode } = toggleMode()
+    const taskDate = computed(() => props.task.date.toLocaleString('en', { day: '2-digit', month: 'short' }))
+    const taskTime = computed(() => props.task.date.toLocaleString('en', { hour: '2-digit', minute: '2-digit', hour12: false }))
+
     const { category } = getCategory(props.task)
 
     const taskClasses = computed(() => ({
-      [`task--type-${unref(category).name}`]: unref(category).name
+      [`task--type-${unref(category).name}`]: unref(category).name,
+      'task--is-complete': props.task.isComplete
     }))
 
     return {
       selectedMode,
       category,
-      taskClasses
+      taskClasses,
+      taskDate,
+      taskTime
     }
   }
 }

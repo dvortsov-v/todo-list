@@ -1,5 +1,6 @@
 <template>
     <button
+        v-on="$listeners"
         :class="NavMenuBtnClasses"
         class="navigation-menu-btn">
         <component :is="btnIcon" class="navigation-menu-btn__icon"></component>

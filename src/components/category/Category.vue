@@ -18,7 +18,7 @@ import Shopping from '../../assets/icons/category/shopping.svg?inline'
 import Sport from '../../assets/icons/category/sport.svg?inline'
 import Wineglass from '../../assets/icons/category/wineglass.svg?inline'
 import { computed, unref } from '@vue/composition-api'
-import { getCategory } from '../features/getCatygory'
+import { getCategory } from '../features/useGetCatygory'
 
 export default {
   name: 'Category',

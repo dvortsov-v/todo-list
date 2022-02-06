@@ -37,6 +37,14 @@ export const store = new Vuex.Store({
         task.isComplete = true
         return task
       })
+    },
+    toogleCompleteTask (state, id) {
+      return state.taskList.map(task => {
+        if (task.id === id) {
+          task.isComplete = !task.isComplete
+        }
+        return task
+      })
     }
   },
   actions: {
@@ -57,6 +65,9 @@ export const store = new Vuex.Store({
     },
     toogleCompleteAllTask ({ commit }) {
       commit('toogleCompleteAllTask')
+    },
+    toogleCompleteTask ({ commit }, id) {
+      commit('toogleCompleteTask', id)
     }
   },
   plugins: [createPersistedState()]

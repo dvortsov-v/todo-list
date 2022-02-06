@@ -11,14 +11,20 @@ export const useTaskList = () => {
   const deleteTask = (taskId) => {
     store.dispatch('deleteTask', taskId)
   }
+
   const toogleCompleteAllTask = () => {
     store.dispatch('toogleCompleteAllTask')
+  }
+
+  const toogleCompleteTask = (taskId) => {
+    store.dispatch('toogleCompleteTask', taskId)
   }
 
   return {
     taskList,
     addTask,
     deleteTask,
-    toogleCompleteAllTask
+    toogleCompleteAllTask,
+    toogleCompleteTask
   }
 }

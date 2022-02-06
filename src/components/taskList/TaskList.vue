@@ -8,7 +8,7 @@
 
 <script>
 import Task from '../taskList/Task'
-import { computed, unref } from '@vue/composition-api'
+import { computed } from '@vue/composition-api'
 import store from '../../store'
 
 export default {
@@ -18,7 +18,7 @@ export default {
   },
   setup () {
     const taskList = computed(() => store.getters.getTaskList)
-    console.log(unref(taskList))
+
     return {
       taskList
     }

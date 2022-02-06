@@ -78,6 +78,14 @@
     line-height: 1.2;
     text-align: left;
   }
+
+  &__action {
+    display: flex;
+  }
+
+  &__done {
+    margin-left: 5px;
+  }
 }
 
 .task-date {
@@ -117,18 +125,23 @@
   box-shadow: 0 2px 5px 0 hsla(327, 99%, 56%, 0.1);
 
   &__checkbox {
-    position: absolute;
-    padding: 0;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    border: 0;
-    clip: rect(0 0 0 0);
-  }
-
-   &__checked {
      width: 14px;
      height: 9px;
-   }
+  }
+}
+
+.task-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 5px 0 hsla(327, 99%, 56%, 0.1);
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+    color: hsl(0, 100%, 50%);
+  }
 }
